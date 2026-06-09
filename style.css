@@ -1,0 +1,1190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body {
+    background-color: #fcf3e4;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', system-ui, sans-serif;
+    position: relative;
+}
+
+/* ОСНОВНОЙ ФОН С ТЕКСТУРОЙ */
+body {
+    background: #fcf3e4;
+    background-image: 
+        /* Твой оригинальный узор */
+        repeating-linear-gradient(
+            45deg,
+            rgba(200, 170, 130, 0.08) 0px,
+            rgba(200, 170, 130, 0.08) 2px,
+            transparent 2px,
+            transparent 10px
+        ),
+        /* Мягкие волны */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 40px,
+            rgba(180, 140, 100, 0.03) 40px,
+            rgba(180, 140, 100, 0.03) 80px
+        ),
+        /* Радиальный градиент для глубины */
+        radial-gradient(circle at 30% 40%, rgba(220, 190, 150, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(200, 160, 110, 0.15) 0%, transparent 50%);
+}
+
+/* ДЕКОРАТИВНЫЕ ТОЧКИ (ЗВЁЗДОЧКИ) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(160, 120, 80, 0.12) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 75% 55%, rgba(140, 100, 60, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 45% 85%, rgba(180, 130, 80, 0.08) 2px, transparent 2px);
+    background-size: 80px 80px, 60px 60px, 100px 100px;
+    background-position: 0 0, 40px 20px, 10px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* МЯГКИЕ СВЕТОВЫЕ ПЯТНА */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(255, 245, 225, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(230, 200, 160, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 50%, rgba(210, 175, 125, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ПОДНИМАЕМ ВЕСЬ КОНТЕНТ НАД ФОНОМ */
+.page-main,
+.page-songs,
+.about-block,
+.aguikki-logo {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== ОСТАЛЬНЫЕ ТВОИ СТИЛИ (НЕ ТРОГАЕМ) ===== */
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-wrapper {
+    text-align: center;
+    max-width: 1300px;
+    width: 100%;
+    transform: translateY(-8vh);
+    margin-top: 3rem;
+    animation: riseUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-title {
+    font-size: clamp(3.2rem, 14vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;
+    text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(255, 247, 230, 0.9);
+    line-height: 1.2;
+    font-family: 'Segoe UI', 'Inter', 'Playfair Display', 'Georgia', serif;
+    transition: all 0.2s;
+    word-break: keep-all;
+}
+
+.main-title:hover {
+    text-shadow: 8px 8px 22px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+    transition: 0.25s;
+}
+
+.accent-line {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    opacity: 0.5;
+}
+
+.accent-line span {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #8d470e;
+    border-radius: 2px;
+}
+
+.sub-note {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: #8b694a;
+    margin-top: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    background: rgba(245, 235, 215, 0.4);
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+    margin: 0.5rem 0 1rem;
+    width: 100%;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #fef9f0);
+    border-radius: 28px;
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.05),
+        -4px -4px 12px rgba(255, 255, 255, 0.6);
+    padding: 1.5rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    min-height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    animation: cardFade 0.4s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+.card:nth-child(1) { animation-delay: 0.02s; }
+.card:nth-child(2) { animation-delay: 0.06s; }
+.card:nth-child(3) { animation-delay: 0.1s; }
+.card:nth-child(4) { animation-delay: 0.14s; }
+.card:nth-child(5) { animation-delay: 0.18s; }
+.card:nth-child(6) { animation-delay: 0.22s; }
+
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        20px 20px 30px rgba(0, 0, 0, 0.08),
+        -6px -6px 16px rgba(255, 255, 255, 0.7);
+}
+
+.card-era {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #5c3f23, #8d470e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    color: #8b694a;
+    background: rgba(200, 170, 130, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.card-arrow {
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #b6916c;
+    border-top: 1px solid #e2caae;
+    padding-top: 1.2rem;
+}
+
+/* ===== ВТОРОЙ БЛОК (ОБ АВТОРЕ) ===== */
+.about-block {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2rem auto 3rem auto;
+    border-radius: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#bg_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#bg_video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+#bg_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #c2a071, #8d470e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fcf3e4;
+    color: #fcf3e4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Центрирование */
+    line-height: 1;
+    text-align: center;
+    /* Для точного центрирования символа */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Убираем лишние отступы */
+    padding: 0;
+    margin: 0;
+}
+
+.avatar-placeholder span {
+    display: block;
+    line-height: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 1.8rem;
+    color: #fcf3e4;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+    border-left: 4px solid #c2a071;
+    padding-left: 1rem;
+}
+
+.about-text {
+    color: #f5e5d2;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* ===== ЯКУТСКИЕ КОНТАКТЫ В БЛОКЕ ОБ АВТОРЕ ===== */
+.about-contacts {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+    font-size: 1rem;
+    color: #e2caae;
+}
+
+.contact-text {
+    font-size: 0.85rem;
+    color: #fcf3e4;
+    letter-spacing: 0.5px;
+}
+/* ===== СТРАНИЦА 2 (СПИСОК ПЕСЕН) ===== */
+.page-songs {
+    display: none;
+    min-height: 100vh;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.songs-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(253, 248, 238, 0.92);
+    border-radius: 32px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.songs-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(194, 160, 113, 0.3);
+}
+
+.songs-main-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line span {
+    display: inline-block;
+    width: 35px;
+    height: 2px;
+    background-color: #8d470e;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+.songs-sub-note {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: #8b694a;
+    letter-spacing: 1px;
+    background: rgba(245, 235, 215, 0.5);
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.back-btn {
+    background: #8b694a;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.back-btn:hover {
+    background: #5c3f23;
+    transform: translateX(-3px);
+}
+
+.era-title {
+    font-size: 2rem;
+    color: #4e3519;
+    border-left: 5px solid #c2a071;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.song-list {
+    list-style: none;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2caae;
+    transition: 0.2s;
+}
+
+.song-item:hover {
+    background: rgba(194, 160, 113, 0.15);
+    border-radius: 12px;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3a2a1a;
+}
+
+.song-artist {
+    font-size: 0.8rem;
+    color: #8b694a;
+    margin-top: 0.2rem;
+}
+
+.download-btn {
+    background: #c2a071;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #8d470e;
+    transform: scale(1.02);
+}
+
+/* ===== ЭМБЛЕМА АГУИККИ С ТЕКСТОМ ===== */
+.aguikki-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.aguikki-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.aguikki-img {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.15));
+    border-radius: 12px;
+}
+
+.aguikki-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.aguikki-short {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4e3519;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.aguikki-full {
+    font-size: 0.85rem;
+    color: #8b694a;
+    line-height: 1.4;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 240px;
+}
+
+.aguikki-logo:hover {
+    transform: scale(1.02);
+}
+
+.aguikki-logo:hover .aguikki-short {
+    color: #8d470e;
+}
+
+.aguikki-logo:hover .aguikki-full {
+    color: #5c3f23;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 700px) {
+    .aguikki-img {
+        width: 55px;
+    }
+    
+    .aguikki-short {
+        font-size: 1rem;
+    }
+    
+    .aguikki-full {
+        font-size: 0.7rem;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 550px) {
+    .aguikki-full {
+        display: none;
+    }
+    
+    .aguikki-short {
+        font-size: 0.9rem;
+    }
+    
+    .aguikki-img {
+        width: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .aguikki-img {
+        width: 40px;
+    }
+    
+    .aguikki-short {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 750px) {
+    body {
+        padding: 1.2rem;
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .avatar-placeholder {
+        width: 100px;
+        height: 100px;
+        font-size: 2.8rem;
+    }
+    .about-title {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    .about-contacts {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .songs-container {
+        padding: 1.2rem;
+    }
+    .song-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .era-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+    .card {
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        line-height: 1.1;
+        word-break: break-word;
+    }
+    .text-wrapper {
+        transform: translateY(-2vh);
+    }
+    .avatar-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 2.2rem;
+    }
+    .about-title {
+        font-size: 1.4rem;
+    }
+    .aguikki-logo img {
+        width: 55px;
+    }
+}
+
+/* ===== ЗАГРУЗОЧНЫЙ ЭКРАН ===== */
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fcf3e4 0%, #f0e2d0 50%, #e8d5c0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* Анимация открытия ворот */
+.loader-screen.open {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.music-key-container {
+    position: relative;
+    margin-bottom: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ЯКУТСКИЙ ОРНАМЕНТАЛЬНЫЙ МУЗЫКАЛЬНЫЙ КЛЮЧ */
+.music-key {
+    font-size: 7rem;
+    filter: drop-shadow(0 0 15px rgba(141, 71, 14, 0.4));
+    animation: rotateKey 2s ease-in-out infinite;
+    background: linear-gradient(135deg, #8d470e, #c2a071, #e2caae);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+/* Декоративные элементы вокруг ключа (якутский узор) */
+.music-key::before {
+    content: "⺹";
+    position: absolute;
+    font-size: 2rem;
+    top: -30px;
+    left: -20px;
+    color: #c2a071;
+    opacity: 0.6;
+    font-family: monospace;
+}
+
+.music-key::after {
+    content: "⺹";
+    position: absolute;
+    font-size: 2rem;
+    bottom: -30px;
+    right: -20px;
+    color: #c2a071;
+    opacity: 0.6;
+    font-family: monospace;
+    transform: rotate(90deg);
+}
+
+.music-notes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.music-notes span {
+    position: absolute;
+    font-size: 1.8rem;
+    color: #8d470e;
+    opacity: 0;
+}
+
+.note1 {
+    top: -20px;
+    left: 20%;
+    animation: floatNote1 2s ease-in-out infinite;
+}
+
+.note2 {
+    bottom: -30px;
+    right: 15%;
+    animation: floatNote2 2.5s ease-in-out infinite;
+}
+
+.note3 {
+    top: 50%;
+    right: -10px;
+    animation: floatNote3 1.8s ease-in-out infinite;
+}
+
+/* ЯКУТСКИЙ ТЕКСТ ЗАГРУЗКИ */
+.loader-text {
+    font-size: 1.3rem;
+    color: #5c3f23;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 500;
+}
+
+.loader-subtext {
+    font-size: 0.9rem;
+    color: #8b694a;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.loader-progress {
+    width: 280px;
+    height: 4px;
+    background: rgba(141, 71, 14, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #8d470e, #c2a071, #e2caae);
+    border-radius: 4px;
+    animation: progress 2.5s ease-out forwards;
+}
+
+/* Декоративный орнамент снизу */
+.loader-decoration {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #c2a071;
+    letter-spacing: 5px;
+    opacity: 0.5;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes rotateKey {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes floatNote1 {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatNote2 {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.6;
+    }
+    75% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-50px) translateX(-30px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatNote3 {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-40px) translateX(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+    30% {
+        width: 40%;
+    }
+    60% {
+        width: 75%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Скрываем контент сайта изначально */
+.site-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.site-content.visible {
+    opacity: 1;
+}
+
+body.loaded .loader-screen {
+    transform: translateY(-100%);
+}
+
+body.loaded .site-content {
+    opacity: 1;
+}
+
+
+/* ===== АНИМАЦИЯ ДЛЯ ВТОРОЙ СТРАНИЦЫ ===== */
+.page-songs {
+    display: none;
+    min-height: 100vh;
+    padding: 1.5rem;
+    width: 100%;
+    animation: pageSongsAppear 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+/* Анимация появления страницы */
+@keyframes pageSongsAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Анимация для контента внутри */
+.songs-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(253, 248, 238, 0.92);
+    border-radius: 32px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    animation: containerAppear 0.5s ease-out 0.2s both;
+}
+
+@keyframes containerAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для заголовка */
+.songs-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(194, 160, 113, 0.3);
+    animation: headerAppear 0.4s ease-out 0.3s both;
+}
+
+@keyframes headerAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация для кнопки "На главную" */
+.back-btn {
+    background: #8b694a;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: 0.2s;
+    font-family: inherit;
+    animation: btnAppear 0.4s ease-out 0.4s both;
+}
+
+@keyframes btnAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация для заголовка эпохи */
+.era-title {
+    font-size: 2rem;
+    color: #4e3519;
+    border-left: 5px solid #c2a071;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    animation: eraAppear 0.4s ease-out 0.5s both;
+}
+
+@keyframes eraAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для списка песен */
+.song-list {
+    list-style: none;
+    animation: listAppear 0.5s ease-out 0.6s both;
+}
+
+@keyframes listAppear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Анимация для каждой песни (по очереди) */
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2caae;
+    transition: 0.2s;
+    animation: songItemAppear 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.song-item:nth-child(1) { animation-delay: 0.1s; }
+.song-item:nth-child(2) { animation-delay: 0.15s; }
+.song-item:nth-child(3) { animation-delay: 0.2s; }
+.song-item:nth-child(4) { animation-delay: 0.25s; }
+.song-item:nth-child(5) { animation-delay: 0.3s; }
+.song-item:nth-child(6) { animation-delay: 0.35s; }
+.song-item:nth-child(7) { animation-delay: 0.4s; }
+.song-item:nth-child(8) { animation-delay: 0.45s; }
+.song-item:nth-child(9) { animation-delay: 0.5s; }
+.song-item:nth-child(10) { animation-delay: 0.55s; }
+
+@keyframes songItemAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация при наведении на песню */
+.song-item:hover {
+    background: rgba(194, 160, 113, 0.15);
+    border-radius: 12px;
+    transform: translateX(5px);
+    transition: 0.2s;
+}
+
+/* Анимация для кнопки скачивания */
+.download-btn {
+    background: #c2a071;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #8d470e;
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* Анимация исчезновения второй страницы */
+@keyframes pageSongsDisappear {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+}

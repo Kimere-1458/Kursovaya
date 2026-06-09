@@ -1,0 +1,1012 @@
+body {
+background-color: #F5F5DC;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+ }
+
+
+font-size: 0.9rem;
+            color: #8b694a;
+            margin-top: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+            background: rgba(245, 235, 215, 0.4);
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+
+
+.sub-line {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: #8b6946;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border-top: 2px solid rgba(139, 105, 70, 0.25);
+            display: inline-block;
+            padding-top: 0.8rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            backdrop-filter: blur(2px);
+
+
+
+
+            <div class="grid">
+        <a class="card" href="#" data-era="80e" target="_blank" id="card-80e">
+            <div class="card-era">80-с</div>
+            <div class="card-desc">80-е годы</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+
+        <a class="card" href="#" data-era="90e" target="_blank" id="card-90e">
+            <div class="card-era">90-с</div>
+            <div class="card-desc">90-е годы</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+
+        <a class="card" href="#" data-era="2000e" target="_blank" id="card-2000e">
+            <div class="card-era">2000-с</div>
+            <div class="card-desc">2000-е</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+
+        <a class="card" href="#" data-era="2010e" target="_blank" id="card-2010e">
+            <div class="card-era">2010-с</div>
+            <div class="card-desc">2010-е</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+
+        <a class="card" href="#" data-era="2020e" target="_blank" id="card-2020e">
+            <div class="card-era">2020-с</div>
+            <div class="card-desc">2020-е</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+
+        <a class="card" href="#" data-era="hity" target="_blank" id="card-hity">
+            <div class="card-era">Хиты</div>
+            <div class="card-desc">Топ ырыалар</div>
+            <div class="card-arrow">⟶</div>
+        </a>
+    </div>
+
+
+
+
+
+    <div class="about-content">
+                        <h2 class="about-title">Об авторе</h2>
+                        <p class="about-text">
+                            Меня зовут <strong>[Твоё имя]</strong>. Я студент(ка) <strong>АГУИККИ</strong>, 
+                            изучаю якутскую культуру и музыку. Этот сайт — моя курсовая работа, 
+                            посвящённая сохранению и популяризации якутских песен разных поколений.
+                        </p>
+                        <p class="about-text">
+                            Цель проекта — собрать в одном месте лучшие образцы якутской музыкальной 
+                            культуры от 80-х годов до наших дней. Все песни можно бесплатно скачать 
+                            и слушать в любое время.
+                        </p>
+                        <div class="about-contacts">
+                            <span>📧 example@mail.ru</span>
+                            <span>📞 +7 (XXX) XXX-XX-XX</span>
+                        </div>
+                    </div>
+
+
+
+                    <div id="bg_wrap">
+        <video autoplay="" muted="" loop="" playsinline="" poster="https://static.sitim.info/video/bg-home-3.jpg" id="bg_video">
+            <source src="https://static.sitim.info/video/bg-home-3.mp4?v=2" type="video/mp4"></video>
+            <div id="bg_mask"></div>
+        </div>
+
+
+
+
+        .main-title {
+    font-size: clamp(3.2rem, 14vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;          
+    text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.1), 0px 1px 0px rgba(255, 247, 230, 0.9);
+    line-height: 1.2;
+    font-family: 'Segoe UI', 'Inter', 'Playfair Display', 'Georgia', serif;
+    transition: all 0.2s;
+    word-break: keep-all;
+}
+
+.main-title:hover {
+    text-shadow: 8px 8px 22px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+    transition: 0.25s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    background-color: #fcf3e4;      
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(253, 238, 215, 0.2) 0px,
+        rgba(235, 215, 185, 0.2) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;    
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: 'Segoe UI', 'Roboto', 'Georgia', 'Times New Roman', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}            
+            
+.text-wrapper {
+    text-align: center;
+    max-width: 1300px;
+    width: 100%;
+    transform: translateY(-8vh);   
+    margin-top: 3rem;           
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 550px) {
+    .text-wrapper {
+        transform: translateY(-4vh);
+        margin-top: 2rem;
+    }
+}
+
+@media (min-height: 900px) {
+    .text-wrapper {
+        transform: translateY(-12vh);
+        margin-top: 4rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .text-wrapper {
+        transform: translateY(-3vh);
+        margin-top: 1rem;
+    }
+}
+
+.main-title {
+    font-size: clamp(3.2rem, 14vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;
+    text-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.15),
+        3px 3px 6px rgba(0, 0, 0, 0.1),
+        1px 1px 2px rgba(255, 247, 230, 0.8),
+        0 0 4px rgba(255, 255, 255, 0.4);
+    line-height: 1.2;
+    font-family: 'Segoe UI', 'Inter', 'Playfair Display', 'Georgia', serif;
+    transition: all 0.2s;
+    word-break: keep-all;
+}
+
+.main-title:hover {
+    text-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.2),
+        4px 4px 8px rgba(0, 0, 0, 0.15),
+        2px 2px 4px rgba(255, 247, 230, 0.9),
+        0 0 8px rgba(255, 255, 255, 0.6);
+    transform: scale(1.01);
+    transition: 0.25s;
+}
+
+.accent-line {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    opacity: 0.5;
+}
+.accent-line span {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #8d470e;
+    border-radius: 2px;
+}
+
+.sub-note {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: #8b694a;
+    margin-top: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    background: rgba(245, 235, 215, 0.4);
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-wrapper {
+    animation: riseUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+body {
+    background: linear-gradient(135deg, #fcf3e4 0%, #f5e5d2 100%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.decor-symbol {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #dbbc99;
+    opacity: 0.25;
+    pointer-events: none;
+    font-family: monospace;
+    user-select: none;
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        line-height: 1.1;
+        word-break: break-word;
+    }
+    .text-wrapper {
+        transform: translateY(-2vh);
+    }
+}
+body::before {
+    content: "❦";
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    font-size: 1.8rem;
+    color: #d9b48b;
+    opacity: 0.3;
+    pointer-events: none;
+    font-family: serif;
+    z-index: 0;
+}
+
+body::after {
+    content: "〄";
+    position: fixed;
+    top: 20px;
+    left: 24px;
+    font-size: 2rem;
+    color: #d9b48b;
+    opacity: 0.25;
+    pointer-events: none;
+    transform: rotate(10deg);
+}
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.card {
+    background: rgba(253, 248, 238, 0.95);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(200, 170, 130, 0.5);
+    text-decoration: none;
+    color: inherit;
+    min-height: 130px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #fffdf7;
+    box-shadow: 0 14px 24px -10px rgba(0, 0, 0, 0.15);
+    border-color: #c2a071;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card-era {
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-weight: 800;
+    color: #5c3f23;
+    margin-bottom: 0.2rem;
+}
+
+.card-desc {
+    font-size: 0.8rem;
+    color: #8b694a;
+    background: rgba(225, 200, 165, 0.35);
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.card-arrow {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #b6916c;
+    border-top: 1px solid #e2caae;
+    padding-top: 1.2rem;
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    body {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+    .card {
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@keyframes cardFade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.card {
+    animation: cardFade 0.4s ease forwards;
+    opacity: 0;
+}
+.card:nth-child(1) { animation-delay: 0.02s; }
+.card:nth-child(2) { animation-delay: 0.06s; }
+.card:nth-child(3) { animation-delay: 0.1s; }
+.card:nth-child(4) { animation-delay: 0.14s; }
+.card:nth-child(5) { animation-delay: 0.18s; }
+.card:nth-child(6) { animation-delay: 0.22s; }
+
+/* ===== ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ВТОРОЙ СТРАНИЦЫ (НЕ ТРОГАЮТ ПЕРВУЮ) ===== */
+.page-songs {
+    min-height: 100vh;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.songs-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(253, 248, 238, 0.92);
+    border-radius: 32px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.songs-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(194, 160, 113, 0.3);
+}
+
+.songs-main-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line span {
+    display: inline-block;
+    width: 35px;
+    height: 2px;
+    background-color: #8d470e;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+.songs-sub-note {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: #8b694a;
+    letter-spacing: 1px;
+    background: rgba(245, 235, 215, 0.5);
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.back-btn {
+    background: #8b694a;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.back-btn:hover {
+    background: #5c3f23;
+    transform: translateX(-3px);
+}
+
+.era-title {
+    font-size: 2rem;
+    color: #4e3519;
+    border-left: 5px solid #c2a071;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.song-list {
+    list-style: none;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2caae;
+    transition: 0.2s;
+}
+
+.song-item:hover {
+    background: rgba(194, 160, 113, 0.15);
+    border-radius: 12px;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3a2a1a;
+}
+
+.song-artist {
+    font-size: 0.8rem;
+    color: #8b694a;
+    margin-top: 0.2rem;
+}
+
+.download-btn {
+    background: #c2a071;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #8d470e;
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .songs-container {
+        padding: 1.2rem;
+    }
+    .song-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .era-title {
+        font-size: 1.5rem;
+    }
+}
+
+.page-songs {
+    display: none;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.songs-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(253, 248, 238, 0.92);
+    border-radius: 32px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.songs-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(194, 160, 113, 0.3);
+}
+
+.songs-main-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #4e3519;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.songs-accent-line span {
+    display: inline-block;
+    width: 35px;
+    height: 2px;
+    background-color: #8d470e;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+.songs-sub-note {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: #8b694a;
+    letter-spacing: 1px;
+    background: rgba(245, 235, 215, 0.5);
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+.back-btn {
+    background: #8b694a;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.back-btn:hover {
+    background: #5c3f23;
+    transform: translateX(-3px);
+}
+
+.era-title {
+    font-size: 2rem;
+    color: #4e3519;
+    border-left: 5px solid #c2a071;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.song-list {
+    list-style: none;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2caae;
+    transition: 0.2s;
+}
+
+.song-item:hover {
+    background: rgba(194, 160, 113, 0.15);
+    border-radius: 12px;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3a2a1a;
+}
+
+.song-artist {
+    font-size: 0.8rem;
+    color: #8b694a;
+    margin-top: 0.2rem;
+}
+
+.download-btn {
+    background: #c2a071;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    background: #8d470e;
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .songs-container {
+        padding: 1.2rem;
+    }
+    .song-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+    .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .era-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== ЭМБЛЕМА АГУИККИ ===== */
+.aguikki-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.aguikki-logo img {
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.15));
+    border-radius: 12px;
+}
+
+.aguikki-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+    .aguikki-logo img {
+        width: 60px;
+    }
+    .aguikki-logo {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 400px) {
+    .aguikki-logo img {
+        width: 50px;
+    }
+}
+
+/* ===== ВИДЕОФОН ТОЛЬКО ДЛЯ БЛОКА ОБО МНЕ ===== */
+.about-block {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    margin: 2rem auto 3rem auto;
+    padding: 0 1.5rem;
+    border-radius: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#bg_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#bg_video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+#bg_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* КОНТЕНТ БЛОКА ПОВЕРХ ВИДЕО */
+.about-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Остальные стили для about-block */
+.about-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #c2a071, #8d470e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fcf3e4;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 1.8rem;
+    color: #fcf3e4;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+    border-left: 4px solid #c2a071;
+    padding-left: 1rem;
+}
+
+.about-text {
+    color: #f5e5d2;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.about-contacts {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.about-contacts span {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: #fcf3e4;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .avatar-placeholder {
+        width: 100px;
+        height: 100px;
+        font-size: 2.8rem;
+    }
+    
+    .about-title {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .about-contacts {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 1.5rem;
+    }
+    
+    .avatar-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 2.2rem;
+    }
+    
+    .about-title {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+.card {
+    background: rgba(253, 248, 238, 0.95);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(200, 170, 130, 0.5);
+    text-decoration: none;
+    color: inherit;
+    min-height: 130px;
+    width: 100%;
+    box-sizing: border-box;
+    animation: cardFade 0.4s ease forwards;
+    opacity: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #fffdf7;
+    box-shadow: 0 14px 24px -10px rgba(0, 0, 0, 0.15);
+    border-color: #c2a071;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card-era {
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-weight: 800;
+    color: #5c3f23;
+    margin-bottom: 0.2rem;
+}
+
+.card-desc {
+    font-size: 0.8rem;
+    color: #8b694a;
+    background: rgba(225, 200, 165, 0.35);
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.card-arrow {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #c2a071, #8d470e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fcf3e4;
+}
