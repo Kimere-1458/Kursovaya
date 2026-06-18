@@ -175,6 +175,7 @@ body::after {
     width: 100%;
 }
 
+/* ===== КАРТОЧКИ С ФОТО-ФОНОМ ===== */
 .card {
     background: linear-gradient(145deg, #ffffff, #fef9f0);
     border-radius: 28px;
@@ -1188,3 +1189,481 @@ body.loaded .site-content {
         transform: scale(0.95) translateY(30px);
     }
 }
+
+.card-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+    border: 3px solid rgba(200, 170, 130, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card:hover .card-image {
+    border-color: #c2a071;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Можно добавить музыкальные иконки вместо картинок */
+.card-image.music-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #8d470e, #c2a071);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* ===== СЕКЦИЯ ПОИСКА И ПЕСЕН (НА ПЕРВОЙ СТРАНИЦЕ) ===== */
+.songs-section {
+    width: 100%;
+    max-width: 1300px;
+    margin: 2rem auto 3rem auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.songs-section .songs-container {
+    width: 100%;
+    background: rgba(253, 248, 238, 0.96);
+    border-radius: 32px;
+    padding: 2rem;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(194, 160, 113, 0.3);
+}
+
+/* Поиск */
+.search-section {
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid rgba(194, 160, 113, 0.3);
+    border-radius: 40px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    outline: none;
+    color: #3a2a1a;
+}
+
+.search-bar input:focus {
+    border-color: #c2a071;
+    box-shadow: 0 0 15px rgba(194, 160, 113, 0.2);
+    background: #ffffff;
+}
+
+.search-bar input::placeholder {
+    color: #b6916c;
+}
+
+.search-btn {
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #8d470e, #c2a071);
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(141, 71, 14, 0.3);
+}
+
+/* Фильтры */
+.filter-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-artists {
+    flex: 2;
+    background: rgba(253, 248, 238, 0.8);
+    border-radius: 20px;
+    padding: 1rem;
+    border: 1px solid rgba(194, 160, 113, 0.2);
+}
+
+.filter-title {
+    font-size: 0.9rem;
+    color: #5c3f23;
+    margin-bottom: 0.8rem;
+    font-family: 'Georgia', serif;
+}
+
+.artist-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.artist-tag {
+    padding: 0.3rem 1rem;
+    background: rgba(194, 160, 113, 0.15);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    color: #5c3f23;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.artist-tag:hover {
+    background: rgba(194, 160, 113, 0.3);
+    transform: translateY(-2px);
+}
+
+.artist-tag.active {
+    background: linear-gradient(135deg, #8d470e, #c2a071);
+    color: white;
+    border-color: #8d470e;
+}
+
+.filter-alphabet {
+    flex: 1;
+    background: rgba(253, 248, 238, 0.8);
+    border-radius: 20px;
+    padding: 1rem;
+    border: 1px solid rgba(194, 160, 113, 0.2);
+}
+
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    gap: 0.3rem;
+}
+
+.alphabet-letter {
+    padding: 0.3rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #5c3f23;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.alphabet-letter:hover {
+    background: rgba(194, 160, 113, 0.2);
+    transform: scale(1.1);
+}
+
+.alphabet-letter.active {
+    background: linear-gradient(135deg, #8d470e, #c2a071);
+    color: white;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+/* ===== ФОНОВЫЕ МУЗЫКАЛЬНЫЕ СИМВОЛЫ ===== */
+.bg-music-symbols {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+    .music-symbol {
+    position: absolute;
+    color: #8d470e;
+    opacity: 0.15;
+    font-family: 'Segoe UI', 'Arial Unicode MS', sans-serif;
+    user-select: none;
+    animation: floatSymbols 25s ease-in-out infinite;
+    text-shadow: 
+        0 0 30px rgba(194, 160, 113, 0.3),
+        0 0 60px rgba(194, 160, 113, 0.1);
+}
+
+
+/* Большие символы */
+.symbol-1 { font-size: 12rem; top: 5%; left: 15%; opacity: 0.12; animation-delay: 0s; }
+.symbol-2 { font-size: 8rem; top: 10%; right: 20%; opacity: 0.18; animation-delay: -2s; }
+.symbol-3 { font-size: 10rem; bottom: 20%; left: 8%; opacity: 0.14; animation-delay: -4s; }
+.symbol-4 { font-size: 15rem; bottom: 5%; right: 10%; opacity: 0.10; animation-delay: -6s; }
+.symbol-5 { font-size: 6rem; top: 45%; left: 45%; opacity: 0.20; animation-delay: -8s; }
+
+/* Средние символы */
+.symbol-6 { font-size: 5rem; top: 25%; left: 5%; opacity: 0.25; animation-delay: -3s; }
+.symbol-7 { font-size: 7rem; top: 60%; right: 5%; opacity: 0.20; animation-delay: -7s; }
+.symbol-8 { font-size: 4rem; top: 75%; left: 20%; opacity: 0.30; animation-delay: -5s; }
+.symbol-9 { font-size: 9rem; top: 35%; right: 35%; opacity: 0.15; animation-delay: -9s; }
+.symbol-10 { font-size: 6rem; top: 85%; right: 25%; opacity: 0.22; animation-delay: -1s; }
+
+/* Анимация парения */
+@keyframes floatSymbols {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translate(-15px, -25px) rotate(5deg) scale(1.05);
+    }
+    50% {
+        transform: translate(15px, -40px) rotate(-5deg) scale(0.95);
+    }
+    75% {
+        transform: translate(-10px, -15px) rotate(3deg) scale(1.02);
+    }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .symbol-1 { font-size: 8rem; top: 5%; left: 10%; }
+    .symbol-2 { font-size: 6rem; top: 8%; right: 15%; }
+    .symbol-3 { font-size: 7rem; bottom: 25%; left: 5%; }
+    .symbol-4 { font-size: 10rem; bottom: 10%; right: 5%; }
+    .symbol-5 { font-size: 5rem; top: 40%; left: 40%; }
+    .symbol-6 { font-size: 4rem; top: 20%; left: 3%; }
+    .symbol-7 { font-size: 5rem; top: 55%; right: 3%; }
+    .symbol-8 { font-size: 3.5rem; top: 70%; left: 15%; }
+    .symbol-9 { font-size: 6rem; top: 30%; right: 25%; }
+    .symbol-10 { font-size: 4.5rem; top: 80%; right: 20%; }
+}
+
+@media (max-width: 480px) {
+    .symbol-1 { font-size: 5rem; top: 5%; left: 5%; }
+    .symbol-2 { font-size: 4rem; top: 8%; right: 10%; }
+    .symbol-3 { font-size: 4.5rem; bottom: 30%; left: 3%; }
+    .symbol-4 { font-size: 6rem; bottom: 15%; right: 3%; }
+    .symbol-5 { font-size: 3.5rem; top: 40%; left: 35%; }
+    .symbol-6 { font-size: 3rem; top: 18%; left: 2%; }
+    .symbol-7 { font-size: 3.5rem; top: 50%; right: 2%; }
+    .symbol-8 { font-size: 2.5rem; top: 65%; left: 10%; }
+    .symbol-9 { font-size: 4rem; top: 25%; right: 20%; }
+    .symbol-10 { font-size: 3rem; top: 75%; right: 15%; }
+}
+
+
+
+
+/* ===== ПРОСТЫЕ ИКОНКИ (КАК ✉) ===== */
+.search-icon-simple,
+.filter-icon-simple {
+    font-size: 1rem;
+    color: #8d470e;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.search-icon-simple:hover,
+.filter-icon-simple:hover {
+    opacity: 1;
+}
+
+
+
+
+/* ===== ТЕКСТ АВТОРСТВА ===== */
+.copyright-text {
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(194, 160, 113, 0.2);
+    color: #b6916c;
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+.copyright-text p {
+    margin: 0.2rem 0;
+}
+
+.copyright-text p:first-child {
+    color: #8b694a;
+    font-weight: 500;
+}
+
+
+/* ===== АУДИОПЛЕЕР ===== */
+.song-player {
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    margin-top: 0.5rem;
+    border-radius: 20px;
+    background: rgba(141, 71, 14, 0.05);
+    display: block;
+}
+
+/* Стилизация плеера */
+.song-player::-webkit-media-controls-panel {
+    background: #fcf3e4;
+    border-radius: 20px;
+}
+
+.song-player::-webkit-media-controls-play-button {
+    background: #8d470e;
+    border-radius: 50%;
+    color: white;
+}
+
+.song-player::-webkit-media-controls-current-time-display,
+.song-player::-webkit-media-controls-time-remaining-display {
+    color: #5c3f23;
+}
+
+.song-player::-webkit-media-controls-timeline {
+    background: rgba(141, 71, 14, 0.2);
+    border-radius: 10px;
+}
+
+.song-player::-webkit-media-controls-volume-slider {
+    background: rgba(141, 71, 14, 0.2);
+    border-radius: 10px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+    .song-player {
+        max-width: 100%;
+    }
+}
+
+
+
+/* ===== МОДАЛЬНОЕ ОКНО ДЛЯ ПЛЕЕРА ===== */
+.audio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.audio-modal-content {
+    background: #fcf3e4;
+    border-radius: 32px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.audio-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #8b694a;
+    background: none;
+    border: none;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.audio-modal-close:hover {
+    color: #8d470e;
+    transform: rotate(90deg);
+}
+
+.audio-modal-content h3 {
+    font-size: 1.2rem;
+    color: #4e3519;
+    margin-bottom: 0.2rem;
+}
+
+.audio-modal-content p {
+    font-size: 0.9rem;
+    color: #8b694a;
+    margin-bottom: 1.2rem;
+}
+
+.audio-modal-content audio {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: 20px;
+}
+
+.audio-modal-content .download-btn {
+    background: linear-gradient(135deg, #8d470e, #c2a071);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.audio-modal-content .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(141, 71, 14, 0.3);
+}
+

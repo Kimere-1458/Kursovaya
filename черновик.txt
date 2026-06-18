@@ -1010,3 +1010,538 @@ body::after {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 3px solid #fcf3e4;
 }
+
+
+
+
+
+
+
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #fef9f0);
+    border-radius: 28px;
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.05),
+        -4px -4px 12px rgba(255, 255, 255, 0.6);
+    padding: 1.5rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    min-height: 150px;
+    width: 100%;
+    box-sizing: border-box;
+    animation: cardFade 0.4s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+.card:nth-child(1) { animation-delay: 0.02s; }
+.card:nth-child(2) { animation-delay: 0.06s; }
+.card:nth-child(3) { animation-delay: 0.1s; }
+.card:nth-child(4) { animation-delay: 0.14s; }
+.card:nth-child(5) { animation-delay: 0.18s; }
+.card:nth-child(6) { animation-delay: 0.22s; }
+
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        20px 20px 30px rgba(0, 0, 0, 0.08),
+        -6px -6px 16px rgba(255, 255, 255, 0.7);
+}
+
+.card-era {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #5c3f23, #8d470e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    color: #8b694a;
+    background: rgba(200, 170, 130, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.card-arrow {
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #b6916c;
+    border-top: 1px solid #e2caae;
+    padding-top: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+// Загрузочный экран
+document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('loaderScreen');
+    const siteContent = document.getElementById('siteContent');
+    
+    // Через 2.5 секунды (время анимации прогресс-бара) открываем ворота
+    setTimeout(function() {
+        loader.classList.add('open');
+        siteContent.classList.add('visible');
+        document.body.classList.add('loaded');
+        
+        // Удаляем загрузочный экран из DOM после анимации
+        setTimeout(function() {
+            if (loader) {
+                loader.style.display = 'none';
+            }
+        }, 1200);
+    }, 2500);
+});
+
+// БАЗА ДАННЫХ ПЕСЕН (заменить ссылки на реальные)
+const songsDatabase = {
+    '80e': {
+        title: '80-с сыллар (80-е годы)',
+        songs: [
+            { name: 'Күн туһунан ырыа', artist: 'Н. Егоров', url: 'https://example.com/song1.mp3' },
+            { name: 'Сардаана', artist: 'В. Ноев', url: 'https://example.com/song2.mp3' },
+            { name: 'Тойук', artist: 'И. Алексеев', url: 'https://example.com/song3.mp3' },
+            { name: 'Сайын кэлиитэ', artist: 'А. Самсонов', url: 'https://example.com/song4.mp3' }
+        ]
+    },
+    '90e': {
+        title: '90-с сыллар (90-е годы)',
+        songs: [
+            { name: 'Ыра санаа', artist: 'Чолбон', url: 'https://example.com/song90_1.mp3' },
+            { name: 'Ахтыы', artist: 'С. Охлопков', url: 'https://example.com/song90_2.mp3' },
+            { name: 'Дьол кустуга', artist: 'Айыы Куо', url: 'https://example.com/song90_3.mp3' }
+        ]
+    },
+    '2000e': {
+        title: '2000-с сыллар (2000-е годы)',
+        songs: [
+            { name: 'Мин сахабын', artist: 'Г. Чахов', url: 'https://example.com/song2000_1.mp3' },
+            { name: 'Кэрэ алаас', artist: 'Т. Егорова', url: 'https://example.com/song2000_2.mp3' },
+            { name: 'Ыһыах', artist: 'Куннэй', url: 'https://example.com/song2000_3.mp3' },
+            { name: 'Тойук ырыа', artist: 'Ойуун', url: 'https://example.com/song2000_4.mp3' }
+        ]
+    },
+    '2010e': {
+        title: '2010-с сыллар (2010-е годы)',
+        songs: [
+            { name: 'Кустук', artist: 'Ньургун', url: 'https://example.com/song2010_1.mp3' },
+            { name: 'Сир ийэ', artist: 'Саина', url: 'https://example.com/song2010_2.mp3' },
+            { name: 'Талбарыы', artist: 'Айхал', url: 'https://example.com/song2010_3.mp3' }
+        ]
+    },
+    '2020e': {
+        title: '2020-с сыллар (2020-е годы)',
+        songs: [
+            { name: 'Күөх тайга', artist: 'М. Попова', url: 'https://example.com/song2020_1.mp3' },
+            { name: 'Санаам сардаҥата', artist: 'Айсен', url: 'https://example.com/song2020_2.mp3' },
+            { name: 'Тойук 2020', artist: 'Саха Артист', url: 'https://example.com/song2020_3.mp3' }
+        ]
+    },
+    'hity': {
+        title: 'Хит ырыалар — Топ (Хиты)',
+        songs: [
+            { name: 'Сардаана', artist: 'В. Ноев', url: 'https://example.com/hit1.mp3' },
+            { name: 'Мин сахабын', artist: 'Г. Чахов', url: 'https://example.com/hit2.mp3' },
+            { name: 'Ыһыах ырыата', artist: 'Куннэй', url: 'https://example.com/hit3.mp3' },
+            { name: 'Айыы кыыһа', artist: 'Айыы Куо', url: 'https://example.com/hit4.mp3' },
+            { name: 'Дьоллаах буол', artist: 'Ньургун', url: 'https://example.com/hit5.mp3' }
+        ]
+    }
+};
+
+// Получаем элементы
+const pageMain = document.getElementById('pageMain');
+const pageSongs = document.getElementById('pageSongs');
+const aboutBlock = document.querySelector('.about-block');  // ДОБАВЛЕНО: блок "Об авторе"
+const eraTitle = document.getElementById('eraTitle');
+const songList = document.getElementById('songList');
+const backBtn = document.getElementById('backBtn');
+
+// Функция открытия страницы с песнями
+function openSongsPage(eraKey) {
+    const eraData = songsDatabase[eraKey];
+    if (!eraData) return;
+
+    // Обновляем заголовок
+    eraTitle.textContent = eraData.title;
+
+    // Очищаем и заполняем список песен
+    songList.innerHTML = '';
+    eraData.songs.forEach(song => {
+        const li = document.createElement('li');
+        li.className = 'song-item';
+        li.innerHTML = `
+            <div class="song-info">
+                <div class="song-name">${escapeHtml(song.name)}</div>
+                <div class="song-artist">${escapeHtml(song.artist)}</div>
+            </div>
+            <a href="${song.url}" class="download-btn" download>📥 Скачать</a>
+        `;
+        songList.appendChild(li);
+    });
+
+    // Переключаем страницы
+    pageMain.style.display = 'none';
+    pageSongs.style.display = 'block';
+    
+    // СКРЫВАЕМ БЛОК "ОБ АВТОРЕ" НА ВТОРОЙ СТРАНИЦЕ
+    if (aboutBlock) {
+        aboutBlock.style.display = 'none';
+    }
+    
+    // Прокручиваем страницу вверх
+    window.scrollTo(0, 0);
+}
+
+// Функция возврата на главную
+function goToMainPage() {
+    pageMain.style.display = 'block';
+    pageSongs.style.display = 'none';
+    
+    // ПОКАЗЫВАЕМ БЛОК "ОБ АВТОРЕ" НА ГЛАВНОЙ
+    if (aboutBlock) {
+        aboutBlock.style.display = 'block';
+    }
+    
+    window.scrollTo(0, 0);
+}
+
+// Защита от XSS
+function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+    });
+}
+
+// Навешиваем обработчики на карточки
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        e.preventDefault();
+        const era = this.getAttribute('data-era');
+        openSongsPage(era);
+    });
+});
+
+// Кнопка "На главную"
+backBtn.addEventListener('click', function() {
+    goToMainPage();
+});
+
+// Показываем главную страницу при загрузке
+pageMain.style.display = 'block';
+pageSongs.style.display = 'none';
+
+// Убеждаемся, что блок "Об авторе" виден на главной
+if (aboutBlock) {
+    aboutBlock.style.display = 'block';
+}
+
+
+// Функция возврата на главную с анимацией
+function goToMainPage() {
+    // Добавляем анимацию исчезновения второй страницы
+    pageSongs.style.animation = 'pageSongsDisappear 0.4s ease forwards';
+    
+    setTimeout(function() {
+        pageMain.style.display = 'block';
+        pageSongs.style.display = 'none';
+        pageSongs.style.animation = ''; // Сбрасываем анимацию
+        
+        // Показываем блок "Об авторе"
+        if (aboutBlock) {
+            aboutBlock.style.display = 'block';
+        }
+        
+        window.scrollTo(0, 0);
+    }, 400);
+}
+
+
+// БАЗА ДАННЫХ ВСЕХ ПЕСЕН (объединяем все эпохи)
+const allSongs = [
+    // 80-е
+    { name: 'Күн туһунан ырыа', artist: 'Н. Егоров', era: '80-с', url: 'https://example.com/song1.mp3' },
+    { name: 'Сардаана', artist: 'В. Ноев', era: '80-с', url: 'https://example.com/song2.mp3' },
+    { name: 'Тойук', artist: 'И. Алексеев', era: '80-с', url: 'https://example.com/song3.mp3' },
+    { name: 'Сайын кэлиитэ', artist: 'А. Самсонов', era: '80-с', url: 'https://example.com/song4.mp3' },
+    // 90-е
+    { name: 'Ыра санаа', artist: 'Чолбон', era: '90-с', url: 'https://example.com/song90_1.mp3' },
+    { name: 'Ахтыы', artist: 'С. Охлопков', era: '90-с', url: 'https://example.com/song90_2.mp3' },
+    { name: 'Дьол кустуга', artist: 'Айыы Куо', era: '90-с', url: 'https://example.com/song90_3.mp3' },
+    // 2000-е
+    { name: 'Мин сахабын', artist: 'Г. Чахов', era: '2000-с', url: 'https://example.com/song2000_1.mp3' },
+    { name: 'Кэрэ алаас', artist: 'Т. Егорова', era: '2000-с', url: 'https://example.com/song2000_2.mp3' },
+    { name: 'Ыһыах', artist: 'Куннэй', era: '2000-с', url: 'https://example.com/song2000_3.mp3' },
+    { name: 'Тойук ырыа', artist: 'Ойуун', era: '2000-с', url: 'https://example.com/song2000_4.mp3' },
+    // 2010-е
+    { name: 'Кустук', artist: 'Ньургун', era: '2010-с', url: 'https://example.com/song2010_1.mp3' },
+    { name: 'Сир ийэ', artist: 'Саина', era: '2010-с', url: 'https://example.com/song2010_2.mp3' },
+    { name: 'Талбарыы', artist: 'Айхал', era: '2010-с', url: 'https://example.com/song2010_3.mp3' },
+    // 2020-е
+    { name: 'Күөх тайга', artist: 'М. Попова', era: '2020-с', url: 'https://example.com/song2020_1.mp3' },
+    { name: 'Санаам сардаҥата', artist: 'Айсен', era: '2020-с', url: 'https://example.com/song2020_2.mp3' },
+    { name: 'Тойук 2020', artist: 'Саха Артист', era: '2020-с', url: 'https://example.com/song2020_3.mp3' },
+    // Хиты
+    { name: 'Сардаана', artist: 'В. Ноев', era: 'Хит', url: 'https://example.com/hit1.mp3' },
+    { name: 'Мин сахабын', artist: 'Г. Чахов', era: 'Хит', url: 'https://example.com/hit2.mp3' },
+    { name: 'Ыһыах ырыата', artist: 'Куннэй', era: 'Хит', url: 'https://example.com/hit3.mp3' },
+    { name: 'Айыы кыыһа', artist: 'Айыы Куо', era: 'Хит', url: 'https://example.com/hit4.mp3' },
+    { name: 'Дьоллаах буол', artist: 'Ньургун', era: 'Хит', url: 'https://example.com/hit5.mp3' }
+];
+
+// Глобальные переменные
+let currentSongs = [...allSongs];
+let currentFilter = 'all';
+let currentLetter = 'all';
+
+// Инициализация
+function initSongs() {
+    document.getElementById('eraTitle').textContent = 'Бары ырыалар';
+    updateArtists(currentSongs);
+    updateAlphabet(currentSongs);
+    renderSongs(currentSongs);
+}
+
+// Обновление списка исполнителей
+function updateArtists(songs) {
+    const artistList = document.getElementById('artistList');
+    const artists = [...new Set(songs.map(s => s.artist))].sort();
+    
+    artistList.innerHTML = `
+        <div class="artist-tag active" data-artist="all">Бары</div>
+    `;
+    
+    artists.forEach(artist => {
+        const tag = document.createElement('div');
+        tag.className = 'artist-tag';
+        tag.dataset.artist = artist;
+        tag.textContent = artist;
+        artistList.appendChild(tag);
+    });
+    
+    document.querySelectorAll('.artist-tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+            document.querySelectorAll('.artist-tag').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            currentFilter = this.dataset.artist;
+            applyFilters();
+        });
+    });
+}
+
+// Обновление алфавита
+function updateAlphabet(songs) {
+    const alphabetGrid = document.getElementById('alphabetGrid');
+    const letters = [...new Set(songs.map(s => s.artist.charAt(0).toUpperCase()))].sort();
+    
+    alphabetGrid.innerHTML = `
+        <div class="alphabet-letter active" data-letter="all">#</div>
+    `;
+    
+    letters.forEach(letter => {
+        const el = document.createElement('div');
+        el.className = 'alphabet-letter';
+        el.dataset.letter = letter;
+        el.textContent = letter;
+        alphabetGrid.appendChild(el);
+    });
+    
+    document.querySelectorAll('.alphabet-letter').forEach(el => {
+        el.addEventListener('click', function() {
+            document.querySelectorAll('.alphabet-letter').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            currentLetter = this.dataset.letter;
+            applyFilters();
+        });
+    });
+}
+
+// Применение фильтров
+function applyFilters() {
+    let filtered = [...currentSongs];
+    
+    if (currentFilter !== 'all') {
+        filtered = filtered.filter(s => s.artist === currentFilter);
+    }
+    
+    if (currentLetter !== 'all') {
+        filtered = filtered.filter(s => s.artist.charAt(0).toUpperCase() === currentLetter);
+    }
+    
+    renderSongs(filtered);
+}
+
+// Поиск
+function searchSongs(query) {
+    const q = query.toLowerCase().trim();
+    if (!q) {
+        applyFilters();
+        return;
+    }
+    
+    const filtered = currentSongs.filter(s => 
+        s.name.toLowerCase().includes(q) || 
+        s.artist.toLowerCase().includes(q)
+    );
+    
+    renderSongs(filtered);
+}
+
+// Отрисовка списка
+function renderSongs(songs) {
+    const songList = document.getElementById('songList');
+    songList.innerHTML = '';
+    
+    if (songs.length === 0) {
+        songList.innerHTML = `
+            <li class="song-item" style="justify-content:center; color: #8b694a;">
+                🎵 Ырыа көстүбэтэ
+            </li>
+        `;
+        return;
+    }
+    
+    songs.forEach(song => {
+        const li = document.createElement('li');
+        li.className = 'song-item';
+        li.innerHTML = `
+            <div class="song-info">
+                <div class="song-name">${escapeHtml(song.name)}</div>
+                <div class="song-artist">${escapeHtml(song.artist)} • ${song.era}</div>
+            </div>
+            <a href="${song.url}" class="download-btn" download>⬇ Скачать</a>
+        `;
+        songList.appendChild(li);
+    });
+}
+
+// Обработчики поиска
+document.getElementById('searchBtn').addEventListener('click', function() {
+    searchSongs(document.getElementById('searchInput').value);
+});
+
+document.getElementById('searchInput').addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+        searchSongs(this.value);
+    }
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    if (this.value === '') {
+        applyFilters();
+    }
+});
+
+// Запуск
+document.addEventListener('DOMContentLoaded', initSongs);
+
+
+
+
+function renderSongs(songs) {
+    const songList = document.getElementById('songList');
+    if (!songList) return;
+    
+    songList.innerHTML = '';
+    
+    if (songs.length === 0) {
+        songList.innerHTML = `
+            <li class="song-item" style="justify-content:center; color: #8b694a;">
+                🎵 Ырыа көстүбэтэ
+            </li>
+        `;
+        return;
+    }
+    
+    songs.forEach((song, index) => {
+        const li = document.createElement('li');
+        li.className = 'song-item';
+        li.innerHTML = `
+            <div class="song-info">
+                <div class="song-name">${escapeHtml(song.name)}</div>
+                <div class="song-artist">${escapeHtml(song.artist)} • ${song.era}</div>
+            </div>
+            <button class="download-btn" onclick="downloadSong('${song.url}', '${escapeHtml(song.name)}')">⬇ Скачать</button>
+        `;
+        songList.appendChild(li);
+    });
+}
+
+function renderSongsPage2(songs) {
+    const songListPage2 = document.getElementById('songListPage2');
+    if (!songListPage2) {
+        console.error('songListPage2 не найден');
+        return;
+    }
+    
+    songListPage2.innerHTML = '';
+    
+    if (songs.length === 0) {
+        songListPage2.innerHTML = `
+            <li class="song-item" style="justify-content:center; color: #8b694a;">
+                🎵 Ырыа көстүбэтэ
+            </li>
+        `;
+        return;
+    }
+    
+    songs.forEach((song, index) => {
+        const li = document.createElement('li');
+        li.className = 'song-item';
+        li.innerHTML = `
+            <div class="song-info">
+                <div class="song-name">${escapeHtml(song.name)}</div>
+                <div class="song-artist">${escapeHtml(song.artist)}</div>
+            </div>
+            <button class="download-btn" onclick="downloadSong('${song.url}', '${escapeHtml(song.name)}')">⬇ Скачать</button>
+        `;
+        songListPage2.appendChild(li);
+    });
+}
